@@ -11,13 +11,17 @@ namespace Task4
     {
         static void Main(string[] args)
         {
-            string path = "C:/Top-level folder/path/t.txt";
-            string path1 = "C:/Top-level folder/path1/t.txt";
-            FileInfo f = new FileInfo(path);
+            string path1 = "C:/Users/Aidos/Documents/PP2/week2/Task4/path1/t.txt";
+            string path2 = "C:/Users/Aidos/Documents/PP2/week2/Task4/path2/t.txt";
+
+            StreamWriter sw = new StreamWriter(path1);
+            sw.Write("asd");
+            sw.Close();
+            FileInfo f = new FileInfo(path1);
 
             if (f.Exists)
             {
-                f.CopyTo(path1);
+                f.CopyTo(path2, true);
                 f.Delete();
             }
         }

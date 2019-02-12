@@ -9,31 +9,32 @@ namespace Task3
 {
     class Program
     {
-        public static void Spaces(int lvl)
+        public static void Space(int lvl)
         {
-            for(int i = 0; i < lvl; i++)
+            for (int i = 0; i < lvl; i++)//create an arr to make a spaces between directories and files
             {
-                Console.Write("     ");
+                Console.Write("     ");// just write spaces
             }
         }
         public static void Ex(DirectoryInfo dir, int lvl)
         {
-            foreach(FileInfo f in dir.GetFiles())
+            foreach (FileInfo f in dir.GetFiles())//cycle that shows files name
             {
-                Spaces(lvl);
+                Space(lvl);
                 Console.WriteLine(f.Name);
             }
-            foreach(DirectoryInfo d in dir.GetDirectories())
+            foreach (DirectoryInfo d in dir.GetDirectories())//cycle that shows directories(folders) name
             {
-                Spaces(lvl);
+                Space(lvl);
                 Console.WriteLine(d.Name);
-                Ex(d, lvl + 1)
+                Ex(d, lvl + 1);
             }
         }
         static void Main(string[] args)
         {
-            DirectoryInfo dir = new DirectoryInfo("C:/Users/Aidos/Documensts/PP2/week2/Task3");
+            DirectoryInfo dir = new DirectoryInfo("C:/Users/Aidos/Documents/PP2/week2/Task3");
             Ex(dir, 0);
+            Console.ReadKey();
         }
     }
 }

@@ -23,20 +23,20 @@ namespace Task2
         }
         static void Main(string[] args)
         {
-            StreamReader sr = new StreamReader("input.txt");
+            StreamReader sr = new StreamReader("input.txt");//create a input file
             String s = sr.ReadToEnd();
-            String[] arr = s.Split();
-            int[] a = new int[arr.Length];
+            String[] arr = s.Split();//make the spaces between numbers 
+            int[] a = new int[arr.Length];//create a new arr with all numbers 
             sr.Close();
             for (int i = 0; i < arr.Length; i++)
             {
-                a[i] = int.Parse(arr[i]);
+                a[i] = int.Parse(arr[i]);//from string to int
             }
-            StreamWriter sw = new StreamWriter("output.txt");
-            for(int i = 0; i < a.Length; i++)
+            StreamWriter sw = new StreamWriter("output.txt");//create a output file
+            for(int i = 0; i < a.Length; i++)//arr to show the prime numbers
             {
                 if (Isprime(a[i]) == true)
-                    sw.Write(a[i] + " ");
+                    sw.Write(a[i] + " ");//output primes
             }
             sw.Close();
         }

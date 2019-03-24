@@ -18,12 +18,12 @@ namespace Task3
         }
         public static void Ex(DirectoryInfo dir, int lvl)
         {
-            foreach (FileInfo f in dir.GetFiles())//cycle that shows files name
+            foreach(FileInfo f in dir.GetFiles())
             {
                 Space(lvl);
                 Console.WriteLine(f.Name);
             }
-            foreach (DirectoryInfo d in dir.GetDirectories())//cycle that shows directories(folders) name
+            foreach(DirectoryInfo d in dir.GetDirectories())
             {
                 Space(lvl);
                 Console.WriteLine(d.Name);

@@ -12,19 +12,18 @@ namespace Task3
         {
             for (int i = 0; i < n; i++)
             {
-                arr[i] = Convert.ToInt32(str[i]);//Convert from string to int
+                arr[i] = int.Parse(str[i]);
             }
-            for (int i = 0; i < n; i++)
+            for(int i = 0; i < n; i++)
             {
-                for (int j = q; j < x; j++)
+                for(int j = q; j < x; j++)
                 {
-                    arr1[j] = arr[i];//2nd array's 2nd element equals to 1st array's 1st element
+                    arr1[j] = arr[i];
                 }
-                q += 2;//Adding 2 to increase array's location
             }
             for (int i = 0; i < x; i++)
             {
-                Console.Write(arr1[i] + " ");//output numbers of arr1 + space
+                Console.Write(arr1[i] + " ");
             }
         }
 
